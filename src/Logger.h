@@ -6,12 +6,12 @@ class Logger
 public:
 	enum LogLevel : unsigned int
 	{
-		TRACE,
-		DEBUG,
-		INFO,
-		WARN,
+		FATAL,
 		ERROR,
-		FATAL
+		WARN,
+		INFO,
+		DEBUG,
+		TRACE
 	};
 
 	template <typename... Args>
@@ -28,7 +28,7 @@ public:
 	static void SetLogLevel(LogLevel logLevel)
 	{
 		// Max log level is 6
-		logLevel <= LogLevel::FATAL ? m_LogLevel = logLevel : m_LogLevel = LogLevel::FATAL;	
+		logLevel <= LogLevel::TRACE ? m_LogLevel = logLevel : m_LogLevel = LogLevel::TRACE;	
 	}
 private:
 	static unsigned int m_LogLevel;

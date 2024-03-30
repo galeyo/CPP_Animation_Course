@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.20.0 FATAL_ERROR)
 
 project(CPP_Animation_Course)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Add all Source Files
 file(GLOB_RECURSE SOURCE_FILES 
@@ -15,6 +17,8 @@ file(GLOB_RECURSE HEADER_FILES
 
 add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
 
+find_package(OpenGL REQUIRED)
+find_package(Vulkan REQUIRED)
 set(GLFW_ROOT_DIR dependencies/glfw)
 set(GLAD_ROOT_DIR dependencies/glad)
 
@@ -22,6 +26,7 @@ add_subdirectory(${GLFW_ROOT_DIR})
 add_subdirectory(${GLAD_ROOT_DIR})
 
 target_include_directories(${PROJECT_NAME}
+	PUBLIC ${Vulkan_INCLUDE_DIRS}
 	PUBLIC ${GLFW_ROOT_DIR}/include
 	PUBLIC ${GLAD_ROOT_DIR}/include
 )
@@ -31,4 +36,4 @@ target_link_directories(${PROJECT_NAME}
 )
 
 
-target_link_libraries(${PROJECT_NAME} glfw glad)
+target_link_libraries(${PROJECT_NAME} Vulkan::Vulkan glfw opengl32 glad)

@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
 	std::unique_ptr<Window> window = std::make_unique<Window>();
 
-	if (!window->Init(640, 480, "Test window"))
+	if (!window->Init(1028, 720, "Test window"))
 	{
 		Logger::Log(Logger::ERROR, "%s error: Window init error\n", __FUNCTION__);
 		return -1;
