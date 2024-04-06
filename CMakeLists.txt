@@ -8,6 +8,7 @@ find_package(OpenGL REQUIRED)
 find_package(Vulkan REQUIRED)
 set(GLFW_ROOT_DIR dependencies/glfw)
 set(GLAD_ROOT_DIR dependencies/glad)
+set(STB_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/stb)
 
 add_subdirectory(${GLFW_ROOT_DIR})
 add_subdirectory(${GLAD_ROOT_DIR})

@@ -25,7 +25,7 @@ bool Window::Init(unsigned int width, unsigned int height, std::string title)
 	// Test OpenGL availability
 	glfwMakeContextCurrent(m_Window);
 	Logger::Log(Logger::INFO, "%s: Window successfully initialized\n", __FUNCTION__);
-
+	Logger::Log(Logger::DEBUG, "%s: OpenGL version: %s\n", __FUNCTION__, glGetString(GL_VERSION));
 	glfwSetWindowUserPointer(m_Window, this);
 	glfwSetWindowCloseCallback(
 		m_Window,

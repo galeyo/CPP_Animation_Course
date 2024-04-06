@@ -1,3 +1,3 @@
 #include "Logger.h"
 
-unsigned int Logger::m_LogLevel = Logger::LogLevel::INFO;
+unsigned int Logger::m_LogLevel = Logger::LogLevel::DEBUG;

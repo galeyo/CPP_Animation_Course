@@ -16,13 +16,15 @@ file(GLOB_RECURSE HEADER_FILES
 add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
 
 target_include_directories(${PROJECT_NAME}
+	PUBLIC ${STB_ROOT_DIR}/include
+	PUBLIC ${Vulkan_INCLUDE_DIRS}
 	PUBLIC ${GLFW_ROOT_DIR}/include
 	PUBLIC ${GLAD_ROOT_DIR}/include
 )
+
 target_link_directories(${PROJECT_NAME} 
 	PRIVATE ${GLFW_ROOT_DIR}/src
 	PRIVATE ${GLAD_ROOT_DIR}/src
 )
-
 
 target_link_libraries(${PROJECT_NAME} glfw opengl32 glad)
