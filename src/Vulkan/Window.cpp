@@ -38,8 +38,7 @@ bool Window::Init(unsigned int width, unsigned int height, std::string title)
 		glfwTerminate();
 		return false;
 	}
-	// Test OpenGL availability
-	// glfwMakeContextCurrent(m_Window);
+
 	Logger::Log(Logger::INFO, "%s: Window successfully initialized\n", __FUNCTION__);
 
 	glfwSetWindowUserPointer(m_Window, this);
@@ -133,18 +132,6 @@ bool Window::InitVulkan()
 
 void Window::MainLoop()
 {
-	// Test OpenGL
-	// // Same as vertical synchronization
-	// glfwSwapInterval(1);
-	// float color = 0.0f;
-	// while(!glfwWindowShouldClose(m_Window))
-	// {
-	// 	color <= 1.0f ? color += 0.1f : color = 0.0f;
-	// 	glClearColor(color, color, color, 1.0f);
-	// 	glClear(GL_COLOR_BUFFER_BIT);
-	// 	glfwSwapBuffers(m_Window);
-	// 	glfwPollEvents();
-	// }
 	while (!glfwWindowShouldClose(m_Window))
 	{
 		glfwPollEvents();
