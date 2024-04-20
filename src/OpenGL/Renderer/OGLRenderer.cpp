@@ -20,13 +20,13 @@ bool OGLRenderer::Init(uint32_t width, uint32_t height)
 		return false;
 	}
 
-	if (!m_Texture.LoadTexture("textures/crate.png"))
+	if (!m_Texture.LoadTexture("Textures/crate.png"))
 	{
 		return false;
 	}
 	m_VertexBuffer.Init();
 
-	if (!m_Shader.LoadShader("shader/basic.vert", "shader/basic.frag"))
+	if (!m_Shader.LoadShaders("Shaders/basic.vert", "Shaders/basic.frag"))
 	{
 		return false;
 	}

@@ -28,3 +28,12 @@ target_link_directories(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME} glfw opengl32 glad)
+
+add_custom_command(TARGET ${PROJECT_NAME}
+		COMMAND ${CMAKE_COMMAND} -E copy_directory
+		${CMAKE_CURRENT_SOURCE_DIR}/Renderer/Shaders $<TARGET_FILE_DIR:${PROJECT_NAME}>/Shaders
+) 
+add_custom_command(TARGET ${PROJECT_NAME}
+		COMMAND ${CMAKE_COMMAND} -E copy_directory
+		${CMAKE_CURRENT_SOURCE_DIR}/Textures $<TARGET_FILE_DIR:${PROJECT_NAME}>/Textures
+) 

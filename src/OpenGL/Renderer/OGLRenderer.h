@@ -26,9 +26,9 @@ public:
 	void Draw();
 
 private:
-	Shader m_BasicShader{};
+	Shader m_Shader{};
 	Framebuffer m_Framebuffer{};
 	VertexBuffer m_VertexBuffer{};
 	Texture m_Texture{};
 	uint32_t m_TriangleCount = 0;
-}
+};
